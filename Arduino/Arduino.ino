@@ -1,6 +1,7 @@
-//Piny czujnika 1
+//Piny sensor 1
 int echoPin = 2;
 int trigPin = 3;
+
 
 void setup() {
   pinMode(echoPin, INPUT);
@@ -15,4 +16,5 @@ void loop() {
   int odleglosc = pulseIn(echoPin, HIGH);
   delay(10);
   Serial.println(odleglosc);
+  char c = Serial.read();    
 }
