@@ -27,7 +27,7 @@ namespace CSharp
             }
             return polaczenie;
         }
-        public void zamknij(MySqlConnection polaczenie)
+        public void Zamknij(MySqlConnection polaczenie)
         {
             polaczenie.Close();
         }

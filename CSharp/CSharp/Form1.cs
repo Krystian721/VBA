@@ -39,13 +39,14 @@ namespace CSharp
         }
 
         private BackgroundWorker _worker = null;
+        private PolaczenieMYSQL polaczenieMYSQL = new PolaczenieMYSQL();
+        private MySqlConnection polaczenie;
         private void bStartZapis_Click(object sender, EventArgs e)
         {
             zapisAktywny = true;
             _worker = new BackgroundWorker();
             _worker.WorkerSupportsCancellation = true;
-            PolaczenieMYSQL polaczenieMYSQL = new PolaczenieMYSQL();
-            MySqlConnection polaczenie = polaczenieMYSQL.Polacz();
+            polaczenie = polaczenieMYSQL.Polacz();
             _worker.DoWork += new DoWorkEventHandler((state, args) =>
             {
                 do
@@ -63,7 +64,6 @@ namespace CSharp
             _worker.RunWorkerAsync();
             bStartZapis.Enabled = false;
             bStopZapis.Enabled = true;
-
         }
 
         private void bStopZapis_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace CSharp
             bStopZapis.Enabled = false;
             bStartZapis.Enabled = true;
             _worker.CancelAsync();
+            polaczenieMYSQL.Zamknij(polaczenie);
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
