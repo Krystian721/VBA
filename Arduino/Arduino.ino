@@ -1,6 +1,7 @@
 //Piny sensor 1
 int echoPin = 2;
 int trigPin = 3;
+char start;
 
 
 void setup() {
@@ -15,6 +16,7 @@ void loop() {
   digitalWrite(trigPin, LOW);
   int odleglosc = pulseIn(echoPin, HIGH);
   delay(10);
-  Serial.println(odleglosc);
-  char c = Serial.read();    
+  if (Serial.available()>0)
+    start = Serial.read();
+  Serial.println(start);   
 }

@@ -38,6 +38,7 @@
             this.bStopPomiar = new System.Windows.Forms.Button();
             this.bStopZapis = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // lSensor1
@@ -116,6 +117,10 @@
             // 
             this.serialPort1.PortName = "COM4";
             // 
+            // serialPort2
+            // 
+            this.serialPort2.PortName = "COM7";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -150,6 +155,7 @@
         private System.Windows.Forms.Button bStopPomiar;
         private System.Windows.Forms.Button bStopZapis;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort serialPort2;
     }
 }
 
