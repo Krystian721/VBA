@@ -23,6 +23,7 @@ namespace CSharp
         {
             if (!(serialPort1.IsOpen))
                 serialPort1.Open();
+            serialPort1.WriteLine("1");
             
         }
 

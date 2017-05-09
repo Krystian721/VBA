@@ -114,7 +114,7 @@
             // 
             // serialPort1
             // 
-            this.serialPort1.PortName = "COM7";
+            this.serialPort1.PortName = "COM4";
             // 
             // Form1
             // 
