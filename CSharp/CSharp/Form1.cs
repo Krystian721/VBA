@@ -114,7 +114,10 @@ namespace CSharp
 
         private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-
+            string otrzymane = serialPort2.ReadLine();
+            string[] wartosci = otrzymane.Split(';');
+            tbSensor1.Text = wartosci[0].ToString();
+            tbSensor2.Text = wartosci[1].ToString();
         }
     }
 }
