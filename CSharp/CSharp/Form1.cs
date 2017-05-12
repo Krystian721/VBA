@@ -25,10 +25,9 @@ namespace CSharp
 
         private void bStartPomiar_Click(object sender, EventArgs e)
         {
-            if (!(serialPort1.IsOpen))
-                serialPort1.Open();
-            serialPort1.WriteLine("1");
-            
+            /*if (!(serialPort2.IsOpen))
+                serialPort2.Open();
+            serialPort2.WriteLine("1");*/           
         }
 
         private void bStopPomiar_Click(object sender, EventArgs e)
@@ -38,32 +37,40 @@ namespace CSharp
                 serialPort1.Close();
         }
 
-        private BackgroundWorker _worker = null;
+        private BackgroundWorker _workerZapis = null;
         private PolaczenieMYSQL polaczenieMYSQL = new PolaczenieMYSQL();
         private MySqlConnection polaczenie;
         private void bStartZapis_Click(object sender, EventArgs e)
         {
-            zapisAktywny = true;
-            _worker = new BackgroundWorker();
-            _worker.WorkerSupportsCancellation = true;
-            polaczenie = polaczenieMYSQL.Polacz();
-            _worker.DoWork += new DoWorkEventHandler((state, args) =>
+            if ((!((String.Compare(tbSensor1.Text.ToString(), "")) == 0)) && (!((String.Compare(tbSensor2.Text.ToString(), "")) == 0)))
             {
-                do
+                polaczenie = polaczenieMYSQL.Polacz();
+                if (polaczenieMYSQL.polaczono == true)
                 {
-                    DateTime dzis = DateTime.UtcNow.Date;
-                    string sqlSensor1 = "INSERT INTO pomiar (wartosc, czas, idSensor) VALUES ('" + tbSensor1.Text.ToString() + "', '" + dzis.ToString("yyyy/MM/dd") + "', '1');";
-                    string sqlSensor2 = "INSERT INTO pomiar (wartosc, czas, idSensor) VALUES ('" + tbSensor2.Text.ToString() + "', '" + dzis.ToString("yyyy/MM/dd") + "', '2');";
-                    MySqlCommand pytanie1 = new MySqlCommand(sqlSensor1, polaczenie);
-                    pytanie1.ExecuteNonQuery();
-                    MySqlCommand pytanie2 = new MySqlCommand(sqlSensor2, polaczenie);
-                    pytanie2.ExecuteNonQuery();
-                    System.Threading.Thread.Sleep(1000);
-                } while (zapisAktywny == true);
-            });
-            _worker.RunWorkerAsync();
-            bStartZapis.Enabled = false;
-            bStopZapis.Enabled = true;
+                    zapisAktywny = true;
+                    _workerZapis = new BackgroundWorker();
+                    _workerZapis.WorkerSupportsCancellation = true;
+                    _workerZapis.DoWork += new DoWorkEventHandler((state, args) =>
+                    {
+                        do
+                        {
+                            DateTime dzis = DateTime.UtcNow.Date;
+                            string sqlSensor1 = "INSERT INTO pomiar (wartosc, czas, idSensor) VALUES ('" + tbSensor1.Text.ToString() + "', '" + dzis.ToString("yyyy/MM/dd") + "', '1');";
+                            string sqlSensor2 = "INSERT INTO pomiar (wartosc, czas, idSensor) VALUES ('" + tbSensor2.Text.ToString() + "', '" + dzis.ToString("yyyy/MM/dd") + "', '2');";
+                            MySqlCommand pytanie1 = new MySqlCommand(sqlSensor1, polaczenie);
+                            pytanie1.ExecuteNonQuery();
+                            MySqlCommand pytanie2 = new MySqlCommand(sqlSensor2, polaczenie);
+                            pytanie2.ExecuteNonQuery();
+                            System.Threading.Thread.Sleep(1000);
+                            tbSensor1.Text = "";
+                            tbSensor2.Text = "";
+                        } while (zapisAktywny == true);
+                    });
+                    _workerZapis.RunWorkerAsync();
+                    bStartZapis.Enabled = false;
+                    bStopZapis.Enabled = true;
+                }
+            }
         }
 
         private void bStopZapis_Click(object sender, EventArgs e)
@@ -71,7 +78,7 @@ namespace CSharp
             zapisAktywny = false;
             bStopZapis.Enabled = false;
             bStartZapis.Enabled = true;
-            _worker.CancelAsync();
+            _workerZapis.CancelAsync();
             polaczenieMYSQL.Zamknij(polaczenie);
         }
 

@@ -61,17 +61,21 @@
             // 
             // tbSensor1
             // 
+            this.tbSensor1.Enabled = false;
             this.tbSensor1.Location = new System.Drawing.Point(12, 29);
             this.tbSensor1.Name = "tbSensor1";
             this.tbSensor1.Size = new System.Drawing.Size(83, 22);
             this.tbSensor1.TabIndex = 2;
+            this.tbSensor1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbSensor2
             // 
+            this.tbSensor2.Enabled = false;
             this.tbSensor2.Location = new System.Drawing.Point(101, 29);
             this.tbSensor2.Name = "tbSensor2";
             this.tbSensor2.Size = new System.Drawing.Size(83, 22);
             this.tbSensor2.TabIndex = 3;
+            this.tbSensor2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bStartPomiar
             // 
@@ -95,6 +99,7 @@
             // 
             // bStopPomiar
             // 
+            this.bStopPomiar.Enabled = false;
             this.bStopPomiar.Location = new System.Drawing.Point(101, 57);
             this.bStopPomiar.Name = "bStopPomiar";
             this.bStopPomiar.Size = new System.Drawing.Size(83, 47);
@@ -105,6 +110,7 @@
             // 
             // bStopZapis
             // 
+            this.bStopZapis.Enabled = false;
             this.bStopZapis.Location = new System.Drawing.Point(101, 113);
             this.bStopZapis.Name = "bStopZapis";
             this.bStopZapis.Size = new System.Drawing.Size(83, 47);
@@ -119,7 +125,7 @@
             // 
             // serialPort2
             // 
-            this.serialPort2.PortName = "COM7";
+            this.serialPort2.PortName = "COM9";
             // 
             // Form1
             // 

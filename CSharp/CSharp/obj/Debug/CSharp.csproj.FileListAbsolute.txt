@@ -7,9 +7,4 @@ C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.csproj.GenerateResource.Cache
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.exe
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.pdb
-C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\bin\Debug\MySql.Data.dll
-C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\bin\Debug\MySql.Data.Entity.EF5.dll
-C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\bin\Debug\MySql.Data.Entity.EF6.dll
-C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\bin\Debug\MySql.Fabric.Plugin.dll
-C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\bin\Debug\MySql.Web.dll
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.csproj.CSharp.exe.config
