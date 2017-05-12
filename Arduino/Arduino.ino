@@ -1,7 +1,7 @@
 //Piny sensor 1
 int echoPin = 2;
 int trigPin = 3;
-char start;
+char pomiar;
 
 
 void setup() {
@@ -11,12 +11,15 @@ void setup() {
 }
 
 void loop() {
+  if (Serial.available()>0)
+    pomiar = Serial.read();
+  if (pomiar == 1){
   digitalWrite(trigPin, HIGH);
   delay(10);
   digitalWrite(trigPin, LOW);
   int odleglosc = pulseIn(echoPin, HIGH);
   delay(10);
-  if (Serial.available()>0)
-    start = Serial.read();
-  Serial.println(start);   
+  String wyslij = odleglosc + ";" + odleglosc;
+  Serial.println(wyslij); 
+  }  
 }
