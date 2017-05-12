@@ -25,16 +25,40 @@ namespace CSharp
 
         private void bStartPomiar_Click(object sender, EventArgs e)
         {
-            /*if (!(serialPort2.IsOpen))
+            if (!(serialPort1.IsOpen))
+            {
+                //Wychodzący 
+                serialPort1.Open();
+            }
+            if (!(serialPort2.IsOpen))
+            { 
+                //Przychodzący
                 serialPort2.Open();
-            serialPort2.WriteLine("1");*/           
+            }  
+            if ((serialPort1.IsOpen)&&(serialPort2.IsOpen))
+            {
+                serialPort1.WriteLine("1");
+                bStartPomiar.Enabled = false;
+                bStopPomiar.Enabled = true;
+            }                
         }
 
         private void bStopPomiar_Click(object sender, EventArgs e)
         {
-            serialPort1.WriteLine("2");
             if (serialPort1.IsOpen)
+            {
+                serialPort1.WriteLine("2");
                 serialPort1.Close();
+            }
+            if (serialPort2.IsOpen)
+            {
+                serialPort2.Close();
+            }
+            if ((!(serialPort1.IsOpen))&& (!(serialPort2.IsOpen)))
+            {
+                bStartPomiar.Enabled = true;
+                bStopPomiar.Enabled = false;
+            }
         }
 
         private BackgroundWorker _workerZapis = null;
@@ -85,7 +109,12 @@ namespace CSharp
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             serialPort1.Close();
+            serialPort2.Close();
         }
 
+        private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+
+        }
     }
 }
