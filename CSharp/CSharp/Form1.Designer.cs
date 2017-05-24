@@ -53,7 +53,7 @@
             // lSensor2
             // 
             this.lSensor2.AutoSize = true;
-            this.lSensor2.Location = new System.Drawing.Point(98, 9);
+            this.lSensor2.Location = new System.Drawing.Point(99, 9);
             this.lSensor2.Name = "lSensor2";
             this.lSensor2.Size = new System.Drawing.Size(65, 17);
             this.lSensor2.TabIndex = 1;
@@ -62,7 +62,8 @@
             // tbSensor1
             // 
             this.tbSensor1.Enabled = false;
-            this.tbSensor1.Location = new System.Drawing.Point(12, 29);
+            this.tbSensor1.Location = new System.Drawing.Point(12, 30);
+            this.tbSensor1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSensor1.Name = "tbSensor1";
             this.tbSensor1.Size = new System.Drawing.Size(83, 22);
             this.tbSensor1.TabIndex = 2;
@@ -71,7 +72,8 @@
             // tbSensor2
             // 
             this.tbSensor2.Enabled = false;
-            this.tbSensor2.Location = new System.Drawing.Point(101, 29);
+            this.tbSensor2.Location = new System.Drawing.Point(101, 30);
+            this.tbSensor2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSensor2.Name = "tbSensor2";
             this.tbSensor2.Size = new System.Drawing.Size(83, 22);
             this.tbSensor2.TabIndex = 3;
@@ -80,6 +82,7 @@
             // bStartPomiar
             // 
             this.bStartPomiar.Location = new System.Drawing.Point(12, 57);
+            this.bStartPomiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bStartPomiar.Name = "bStartPomiar";
             this.bStartPomiar.Size = new System.Drawing.Size(83, 47);
             this.bStartPomiar.TabIndex = 4;
@@ -89,7 +92,9 @@
             // 
             // bStartZapis
             // 
+            this.bStartZapis.Enabled = false;
             this.bStartZapis.Location = new System.Drawing.Point(12, 113);
+            this.bStartZapis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bStartZapis.Name = "bStartZapis";
             this.bStartZapis.Size = new System.Drawing.Size(83, 47);
             this.bStartZapis.TabIndex = 5;
@@ -101,6 +106,7 @@
             // 
             this.bStopPomiar.Enabled = false;
             this.bStopPomiar.Location = new System.Drawing.Point(101, 57);
+            this.bStopPomiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bStopPomiar.Name = "bStopPomiar";
             this.bStopPomiar.Size = new System.Drawing.Size(83, 47);
             this.bStopPomiar.TabIndex = 6;
@@ -112,6 +118,7 @@
             // 
             this.bStopZapis.Enabled = false;
             this.bStopZapis.Location = new System.Drawing.Point(101, 113);
+            this.bStopZapis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bStopZapis.Name = "bStopZapis";
             this.bStopZapis.Size = new System.Drawing.Size(83, 47);
             this.bStopZapis.TabIndex = 7;
@@ -121,11 +128,11 @@
             // 
             // serialPort1
             // 
-            this.serialPort1.PortName = "COM4";
+            this.serialPort1.PortName = "COM5";
             // 
             // serialPort2
             // 
-            this.serialPort2.PortName = "COM9";
+            this.serialPort2.PortName = "COM6";
             this.serialPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort2_DataReceived);
             // 
             // Form1
@@ -141,6 +148,7 @@
             this.Controls.Add(this.tbSensor1);
             this.Controls.Add(this.lSensor2);
             this.Controls.Add(this.lSensor1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

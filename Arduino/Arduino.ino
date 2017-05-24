@@ -1,7 +1,9 @@
 //Piny sensor 1
 int echoPin = 2;
 int trigPin = 3;
-char pomiar;
+String pomiar = "1";
+//Piny sensor 2
+int analogPin = 0;
 
 
 void setup() {
@@ -13,13 +15,15 @@ void setup() {
 void loop() {
   if (Serial.available()>0)
     pomiar = Serial.read();
-  if (pomiar == 1){
+  if (pomiar == "1"){
   digitalWrite(trigPin, HIGH);
-  delay(10);
+  delay(200);
   digitalWrite(trigPin, LOW);
   int odleglosc = pulseIn(echoPin, HIGH);
-  delay(10);
-  String wyslij = odleglosc + ";" + odleglosc;
-  Serial.println(wyslij); 
-  }  
+  int temperatura = analogRead(analogPin);
+  delay(200);
+  Serial.print(odleglosc); 
+  Serial.print(";");
+  Serial.println(temperatura);
+  }
 }

@@ -8,3 +8,26 @@ C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.exe
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.pdb
 C:\Users\kryst\Desktop\Studia\Programowanie w aplikacjach użytkowych\VBA\CSharp\CSharp\obj\Debug\CSharp.csproj.CSharp.exe.config
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\CSharp.exe.config
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.exe
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.pdb
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\CSharp.exe
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\CSharp.pdb
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\MySql.Data.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\MySql.Data.Entity.EF5.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\MySql.Web.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.csproj.CSharp.exe.config
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.Form1.resources
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.Properties.Resources.resources
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.csproj.GenerateResource.Cache
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\CSharp.tmsx
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RevDeBug.NamedPipeStateStorage.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RevDeBug.Common.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RevDeBug.setup
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RemoteRecOn.bat
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RemoteRecOff.bat
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RevDeBug.Web.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\bin\Debug\RevDeBug_Net20.dll
+C:\Users\Damian\Desktop\VBA-master\CSharp\CSharp\obj\Debug\CSharp.tmsx

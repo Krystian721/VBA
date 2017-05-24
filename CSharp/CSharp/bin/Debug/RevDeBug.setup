@@ -1,0 +1,4 @@
+StateStorageClassName=NamedPipe;
+Application.Name=[Exec];
+Repository.Path=C:\Users\Damian\Documents\RevDeBug\CSharp\Recordings\{appname}{timestamp}.tmox;
+VsInstanceGuid=182e60cde92045639fd6d42112d14447;

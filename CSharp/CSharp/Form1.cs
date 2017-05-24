@@ -29,17 +29,20 @@ namespace CSharp
             {
                 //Wychodzący 
                 serialPort1.Open();
+                serialPort1.DtrEnable=true;
             }
             if (!(serialPort2.IsOpen))
             { 
                 //Przychodzący
                 serialPort2.Open();
+                serialPort2.DtrEnable = true;
             }  
             if ((serialPort1.IsOpen)&&(serialPort2.IsOpen))
             {
-                serialPort1.WriteLine("1");
+                serialPort1.Write("1");
                 bStartPomiar.Enabled = false;
                 bStopPomiar.Enabled = true;
+                bStartZapis.Enabled = true;
             }                
         }
 
@@ -58,6 +61,7 @@ namespace CSharp
             {
                 bStartPomiar.Enabled = true;
                 bStopPomiar.Enabled = false;
+                bStartZapis.Enabled = false;
             }
         }
 
@@ -111,13 +115,19 @@ namespace CSharp
             serialPort1.Close();
             serialPort2.Close();
         }
-
-        private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        public string otrzymane = "";
+        private void wyswietl(object sender, EventArgs e)
         {
-            string otrzymane = serialPort2.ReadLine();
             string[] wartosci = otrzymane.Split(';');
             tbSensor1.Text = wartosci[0].ToString();
             tbSensor2.Text = wartosci[1].ToString();
         }
+        private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            otrzymane = serialPort1.ReadLine();
+            this.Invoke(new EventHandler(wyswietl));
+        }
+
+
     }
 }
