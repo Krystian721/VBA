@@ -124,7 +124,7 @@ namespace CSharp
         }
         private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
-            otrzymane = serialPort1.ReadLine();
+            otrzymane = serialPort2.ReadLine();
             this.Invoke(new EventHandler(wyswietl));
         }
 
