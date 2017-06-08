@@ -25,21 +25,15 @@ namespace CSharp
 
         private void bStartPomiar_Click(object sender, EventArgs e)
         {
-            if (!(serialPort1.IsOpen))
-            {
-                //Wychodzący 
-                serialPort1.Open();
-                serialPort1.DtrEnable=true;
-            }
             if (!(serialPort2.IsOpen))
             { 
                 //Przychodzący
                 serialPort2.Open();
                 serialPort2.DtrEnable = true;
             }  
-            if ((serialPort1.IsOpen)&&(serialPort2.IsOpen))
+            if (serialPort2.IsOpen)
             {
-                serialPort1.Write("1");
+                
                 bStartPomiar.Enabled = false;
                 bStopPomiar.Enabled = true;
                 bStartZapis.Enabled = true;
@@ -48,17 +42,10 @@ namespace CSharp
 
         private void bStopPomiar_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen)
-            {
-                serialPort1.WriteLine("2");
-                serialPort1.Close();
-            }
             if (serialPort2.IsOpen)
             {
                 serialPort2.Close();
-            }
-            if ((!(serialPort1.IsOpen))&& (!(serialPort2.IsOpen)))
-            {
+
                 bStartPomiar.Enabled = true;
                 bStopPomiar.Enabled = false;
                 bStartZapis.Enabled = false;
@@ -92,8 +79,6 @@ namespace CSharp
                             MySqlCommand pytanie2 = new MySqlCommand(sqlSensor2, polaczenie);
                             pytanie2.ExecuteNonQuery();
                             System.Threading.Thread.Sleep(1000);
-                            tbSensor1.Text = "";
-                            tbSensor2.Text = "";
                         } while (zapisAktywny == true);
                     });
                     _workerZapis.RunWorkerAsync();
@@ -114,20 +99,19 @@ namespace CSharp
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            serialPort1.Close();
             serialPort2.Close();
         }
         public string otrzymane = "";
-        private void Wyswietl(object sender, EventArgs e)
+        private void wyswietl(object sender, EventArgs e)
         {
-            string[] wartosci = otrzymane.Split(';');
+            string[] wartosci = otrzymane.Split(':');
             tbSensor1.Text = wartosci[0].ToString();
             tbSensor2.Text = wartosci[1].ToString();
         }
         private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             otrzymane = serialPort2.ReadLine();
-            this.Invoke(new EventHandler(Wyswietl));
+            this.Invoke(new EventHandler(wyswietl));
         }
 
 

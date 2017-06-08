@@ -37,7 +37,6 @@
             this.bStartZapis = new System.Windows.Forms.Button();
             this.bStopPomiar = new System.Windows.Forms.Button();
             this.bStopZapis = new System.Windows.Forms.Button();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
@@ -126,13 +125,9 @@
             this.bStopZapis.UseVisualStyleBackColor = true;
             this.bStopZapis.Click += new System.EventHandler(this.bStopZapis_Click);
             // 
-            // serialPort1
-            // 
-            this.serialPort1.PortName = "COM5";
-            // 
             // serialPort2
             // 
-            this.serialPort2.PortName = "COM6";
+            this.serialPort2.PortName = "COM4";
             this.serialPort2.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort2_DataReceived);
             // 
             // Form1
@@ -169,7 +164,6 @@
         private System.Windows.Forms.Button bStartZapis;
         private System.Windows.Forms.Button bStopPomiar;
         private System.Windows.Forms.Button bStopZapis;
-        private System.IO.Ports.SerialPort serialPort1;
         private System.IO.Ports.SerialPort serialPort2;
     }
 }

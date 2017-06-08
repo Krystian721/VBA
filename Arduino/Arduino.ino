@@ -23,7 +23,7 @@ void loop() {
   int temperatura = analogRead(analogPin);
   delay(200);
   Serial.print(odleglosc); 
-  Serial.print(";");
+  Serial.print(":");
   Serial.println(temperatura);
   }
 }
