@@ -76,8 +76,10 @@ namespace CSharp
                 if (polaczenieMYSQL.polaczono == true)
                 {
                     zapisAktywny = true;
-                    _workerZapis = new BackgroundWorker();
-                    _workerZapis.WorkerSupportsCancellation = true;
+                    _workerZapis = new BackgroundWorker()
+                    {
+                        WorkerSupportsCancellation = true
+                    };
                     _workerZapis.DoWork += new DoWorkEventHandler((state, args) =>
                     {
                         do
@@ -116,7 +118,7 @@ namespace CSharp
             serialPort2.Close();
         }
         public string otrzymane = "";
-        private void wyswietl(object sender, EventArgs e)
+        private void Wyswietl(object sender, EventArgs e)
         {
             string[] wartosci = otrzymane.Split(';');
             tbSensor1.Text = wartosci[0].ToString();
@@ -125,7 +127,7 @@ namespace CSharp
         private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             otrzymane = serialPort2.ReadLine();
-            this.Invoke(new EventHandler(wyswietl));
+            this.Invoke(new EventHandler(Wyswietl));
         }
 
 
